@@ -1,0 +1,123 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{csquotes}
+\usepackage{caption}
+\usepackage[table]{xcolor}
+\usepackage[backend=biber,style=apa]{biblatex}
+\addbibresource{referencias.bib}
+
+% Titulos de tablas y figuras en estilo APA (Tabla 1 / titulo en cursiva)
+\captionsetup[table]{labelfont={bf,it}, textfont=it, labelsep=newline,
+  singlelinecheck=false, justification=raggedright}
+\captionsetup[figure]{labelfont={bf,it}, textfont=it, labelsep=newline,
+  singlelinecheck=false, justification=raggedright}
+
+% Colores de la Ecuacion Universal
+\definecolor{colProceso}{HTML}{3F6FA8}
+\definecolor{colTecnologia}{HTML}{B8902A}
+\definecolor{colContexto}{HTML}{B5532F}
+
+\newcommand{\titulotesis}{%
+  \textcolor{colProceso}{Modelo de predicción de heladas}
+  \textcolor{colTecnologia}{mediante aprendizaje automático con series temporales}
+  \textcolor{colContexto}{para cultivos altoandinos de Cusco}%
+}
+
+% Algoritmos
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\listalgorithmname}{Índice de Algoritmos}
+
+% Indices personalizados: ecuaciones y anexos
+\usepackage{tocloft}
+\newlistof{ecuaciones}{loe}{Índice de Ecuaciones}
+\newlistof{anexoslista}{anx}{Índice de Anexos}
+
+% Enlaces clicables (debe ir despues de los paquetes anteriores)
+\usepackage[colorlinks=true, linkcolor=colProceso, citecolor=colTecnologia, urlcolor=colContexto]{hyperref}
+\usepackage{orcidlink} % debe ir despues de hyperref
+
+% Glosario, abreviaturas y simbolos (debe ir despues de hyperref)
+\usepackage[acronym, symbols, toc]{glossaries}
+\makeglossaries
+\input{glosario}
+
+\makeatletter
+\renewcommand{\listofalgorithms}{%
+  \phantomsection
+  \section*{Índice de Algoritmos}
+  \addcontentsline{toc}{section}{Índice de Algoritmos}
+  \@starttoc{loa}%
+}
+\renewcommand{\listofecuaciones}{%
+  \phantomsection
+  \section*{Índice de Ecuaciones}
+  \addcontentsline{toc}{section}{Índice de Ecuaciones}
+  \@starttoc{loe}%
+}
+\renewcommand{\listofanexoslista}{%
+  \phantomsection
+  \section*{Índice de Anexos}
+  \addcontentsline{toc}{section}{Índice de Anexos}
+  \@starttoc{anx}%
+}
+\makeatother
+
+\begin{document}
+
+\pagenumbering{roman}
+\input{portada}
+\clearpage
+\input{resumen}
+\clearpage
+
+\renewcommand{\contentsname}{Índice general}
+\tableofcontents
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{Índice de figuras}
+\listoffigures
+\clearpage
+\phantomsection\addcontentsline{toc}{section}{Índice de tablas}
+\listoftables
+\clearpage
+\listofalgorithms
+\clearpage
+\listofecuaciones
+\clearpage
+\glsaddall
+\printglossary[type=\acronymtype,title={Índice de Abreviaturas}]
+\clearpage
+\printglossary[type=symbols,title={Índice de Símbolos}]
+\clearpage
+\printglossary[title={Glosario de Términos}]
+\clearpage
+\listofanexoslista
+\clearpage
+\pagenumbering{arabic}
+
+\input{introduccion}
+\input{cap1_problema}
+\input{cap2_objetivos}
+\input{cap3_justificacion}
+\input{cap4_alcances}
+\input{cap5_antecedentes}
+\input{cap_estadoarte}
+\input{cap6_marcoteorico}
+\input{cap7_metodologia}
+\input{cap8_importancia}
+\input{cap9_cronograma}
+\input{cap10_presupuesto}
+
+\printbibliography[title={Bibliografía}, heading=bibintoc]
+
+\appendix
+\section{Nombre del primer anexo}
+\addcontentsline{anx}{anexoslista}{Anexo A: Nombre del primer anexo}
+[Contenido del anexo.]
+
+\end{document}

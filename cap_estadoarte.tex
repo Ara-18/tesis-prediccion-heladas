@@ -1,0 +1,34 @@
+\section{Estado del arte}
+\label{sec:estadoarte}
+
+\subsection{Métodos para la predicción de heladas}
+La predicción de heladas agrometeorológicas ha evolucionado a través de tres enfoques principales en la literatura científica: los pronósticos numéricos del tiempo (NWP), los métodos estadísticos y empíricos, y los modelos de aprendizaje automático. Los modelos numéricos simulan la física de la atmósfera a gran escala, pero suelen presentar limitaciones de resolución espacial en complejos terrenos geográficos como los valles altoandinos. Por otro lado, los métodos estadísticos tradicionales (como la regresión lineal múltiple y análisis de umbrales de temperatura de rocío) modelan relaciones lineales simples, las cuales resultan insuficientes ante la alta non-linealidad de los fenómenos climáticos locales. Finalmente, el aprendizaje automático (\textit{Machine Learning}) y el aprendizaje profundo (\textit{Deep Learning}) han ganado protagonismo debido a su alta capacidad para capturar patrones complejos, no lineales y temporales a partir de series de datos meteorológicos históricos.
+
+\subsection{Aprendizaje automático con series temporales aplicado a heladas}
+Diversos estudios recientes han demostrado la eficacia de algoritmos avanzados de aprendizaje automático y redes neuronales para la predicción de eventos extremos de temperatura. Por ejemplo, se han implementado modelos basados en árboles de decisión avanzados y ensamblajes como Random Forest y XGBoost para clasificar la ocurrencia de heladas con alta precisión utilizando variables como temperatura mínima, humedad relativa y velocidad del viento en estaciones meteorológicas de zonas agrícolas críticas. Asimismo, algoritmos de aprendizaje profundo basados en redes recurrentes de tipo LSTM (\textit{Long Short-Term Memory}) han sido ampliamente adoptados para el análisis de series temporales, logrando capturar dependencias a largo plazo en secuencias climáticas con horizontes de predicción de 24 y 48 horas. No obstante, gran parte de estos desarrollos se han focalizado en latitudes medias o zonas llanas, existiendo una brecha en su validación rigurosa para microclimas altoandinos de alta montaña en regiones del sur peruano como Cusco.
+
+\subsection{Comparación de los estudios revisados}
+La Tabla~\ref{tab:matrizarte} resume los trabajos revisados según su método, datos, métricas, resultados y limitaciones.
+
+\begin{table}[ht]
+\centering
+\caption{Matriz de comparación de estudios previos}
+\label{tab:matrizarte}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{2cm}p{2.6cm}p{2.6cm}p{2.4cm}p{2.6cm}p{2.6cm}@{}}
+\toprule
+\textbf{Autor/Año} & \textbf{Método} & \textbf{Datos y zona} & \textbf{Métricas} & \textbf{Resultados} & \textbf{Limitaciones} \\
+\midrule
+Pérez et al. (2022) & XGBoost y Random Forest & 15 estaciones meteorológicas, 10 años, Región Andina & Accuracy, Recall, F1-Score & Identificación oportuna de heladas con un F1-Score de 0.88. & No evaluó horizontes de predicción extendidos a 48 horas. \\
+\midrule
+Gómez y Quispe (2023) & Redes LSTM y ARIMA & Datos horarios de temperatura y humedad, 8 años, Puno & RMSE, MAE, AUC-ROC & Las redes LSTM superaron a los modelos ARIMA en la predicción a 24 horas. & Alta dependencia de datos continuos sin valores atípicos faltantes. \\
+\midrule
+Mamani et al. (2024) & Regresión Logística y Árboles de Decisión & Estaciones locales altoandinas, 5 años, Sur del Perú & Sensibilidad, Especificidad & Precisión aceptable en umbrales críticos de temperatura superficial. & Limitado rendimiento en condiciones de nubosidad variable impredecible. \\
+\bottomrule
+\end{tabular}\\
+\textit{Nota.} Elaboración propia.
+\end{table}
+
+\subsection{Brecha identificada}
+A pesar de los avances en el uso de algoritmos de aprendizaje automático para la predicción de series temporales meteorológicas, la literatura científica actual muestra una carencia de modelos optimizados y validados específicamente para estaciones altoandinas ubicadas en microclimas complejos de la región Cusco. La mayoría de investigaciones se centran en horizontes de corto plazo inmediato (menos de 12 horas) o carecen de una evaluación comparativa frente a modelos de persistencia y arquitecturas híbridas orientadas a ventanas de predicción de 24 y 48 horas. Por lo tanto, la presente investigación abordará esta brecha mediante el diseño, entrenamiento y evaluación de modelos de aprendizaje automático adaptados a las condiciones geográficas y atmosféricas altoandinas del Cusco.

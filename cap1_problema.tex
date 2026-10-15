@@ -1,0 +1,60 @@
+\section{Planteamiento del problema}
+\label{sec:problema}
+
+\subsection{Descripción de la problemática}
+
+La región Cusco se ubica en la zona altoandina del Perú, donde la agricultura de papa, maíz, quinua, habas y otros cultivos andinos es la base de la economía y la seguridad alimentaria de numerosas familias rurales. Esta actividad está expuesta a las heladas, fenómeno meteorológico que ocurre cuando la temperatura del aire desciende a $0\,^\circ$C o menos y que daña los tejidos de las plantas, con pérdidas parciales o totales de la producción.
+
+Las medidas de protección (riego previo, cobertura de cultivos, humo controlado, entre otras) solo son efectivas si se aplican con anticipación. Sin embargo, los productores suelen disponer únicamente de pronósticos generales de cobertura amplia, que no reflejan las condiciones microclimáticas de cada zona, pues la temperatura mínima varía con la altitud, la topografía, la humedad y la nubosidad. Como consecuencia, las alertas llegan tarde, son imprecisas o no se ajustan a la localidad, y los agricultores no pueden actuar a tiempo.
+
+Existen registros históricos de estaciones meteorológicas de la región, pero estos datos no se aprovechan de forma sistemática para construir modelos predictivos locales. Además, la helada es un evento poco frecuente respecto al total de días del año, lo que genera un desbalance de clases que dificulta su predicción con métodos convencionales y exige técnicas apropiadas de aprendizaje automático y de series temporales.
+
+En consecuencia, se identifica la necesidad de un modelo predictivo, calibrado con datos históricos de la región Cusco, que anticipe la ocurrencia de heladas con suficiente antelación y confiabilidad para apoyar la protección de los cultivos altoandinos.
+
+\subsection{Identificación del problema}
+
+El problema se localiza en las zonas altoandinas de la región Cusco y afecta a los productores de papa, maíz, quinua y habas. Su comportamiento tiene rasgos que explican por qué es difícil de resolver. Primero, la temperatura mínima cambia con la altitud y la topografía, por lo que un pronóstico general no representa a cada localidad. Segundo, los registros históricos de las estaciones existen, pero no se utilizan de forma sistemática para predecir. Tercero, las heladas son una minoría frente al total de días, lo que genera conjuntos de datos desbalanceados y obliga a cuidar los errores en ambas direcciones: tanto no detectar una helada real como emitir una alerta falsa.
+
+El problema identificado es, por lo tanto, la falta de modelos predictivos locales que permitan anticipar la ocurrencia de heladas en la zona altoandina de Cusco, lo que deja a los productores con alertas tardías o imprecisas. La Tabla~\ref{tab:arbol} resume el problema en forma de árbol: los efectos que produce, el problema central y las causas que lo originan.
+
+\begin{table}[ht]
+\centering
+\caption{Síntesis del árbol de problemas}
+\label{tab:arbol}
+\begin{tabular}{@{}p{2.3cm}p{12.8cm}@{}}
+\toprule
+\textbf{Nivel} & \textbf{Descripción} \\
+\midrule
+Efectos &
+\textbullet\ Pérdida parcial o total de cosechas de cultivos altoandinos.\newline
+\textbullet\ Afectación de los ingresos y la seguridad alimentaria de familias rurales.\newline
+\textbullet\ Medidas de protección aplicadas tarde o no aplicadas. \\
+\midrule
+Problema central &
+Alertas de heladas tardías, imprecisas o no ajustadas a la localidad en zonas altoandinas de Cusco. \\
+\midrule
+Causas &
+\textbullet\ Pronósticos de cobertura amplia que no reflejan el microclima local.\newline
+\textbullet\ Registros históricos de estaciones sin aprovechar de forma sistemática.\newline
+\textbullet\ Desbalance de clases que dificulta el uso de métodos convencionales.\newline
+\textbullet\ Ausencia de modelos predictivos locales con aprendizaje automático. \\
+\bottomrule
+\end{tabular}\\
+\textit{Nota.} Elaboración propia.
+\end{table}
+
+\subsection{Formulación del problema}
+
+\subsubsection{Problema general}
+
+Las heladas afectan cada año a los cultivos altoandinos de Cusco y los productores solo reciben alertas generales, tardías o imprecisas. Entre sus causas están los pronósticos de cobertura amplia, el escaso aprovechamiento de los registros históricos y el desbalance de clases; entre sus consecuencias, la pérdida de cosechas y la afectación de los ingresos de las familias rurales. Como los registros de las estaciones permiten reconocer patrones en las series temporales, surge la necesidad de evaluar si el aprendizaje automático puede anticipar las heladas. En este marco, la pregunta que orienta la investigación es:
+
+\textit{¿Cómo se comporta \textcolor{colProceso}{\textbf{un modelo predictivo}} basado en \textcolor{colTecnologia}{\textbf{aprendizaje automático con series temporales}}, calibrado con datos de \textcolor{colContexto}{\textbf{estaciones altoandinas de Cusco}}, en términos de recall, precisión y F1 al anticipar heladas a 24 y 48 horas, frente a un modelo base de persistencia?}
+\subsubsection{Problemas específicos}
+
+\begin{itemize}
+  \item \textbf{PE1.} ¿Qué características y calidad presentan los datos históricos de estaciones meteorológicas altoandinas de Cusco para la predicción de heladas?
+  \item \textbf{PE2.} ¿Qué variables meteorológicas y características temporales son las más relevantes para predecir la ocurrencia de heladas?
+  \item \textbf{PE3.} ¿Qué algoritmo de aprendizaje automático logra el mejor desempeño en la predicción de heladas?
+  \item \textbf{PE4.} ¿Qué nivel de desempeño alcanza el modelo a 24 y 48 horas de anticipación en comparación con un modelo base?
+\end{itemize}

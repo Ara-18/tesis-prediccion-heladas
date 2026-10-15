@@ -1,0 +1,57 @@
+\section{Antecedentes de la investigación}
+\label{sec:antecedentes}
+
+\subsection{Antecedentes nacionales}
+
+\noindent
+\textbf{Autor:} Quispe, M. y Huamán, R. (2023) \\
+\textbf{Título:} \textit{Evaluación de modelos de machine learning para la predicción de heladas agrometeorológicas en la región Puno} \\
+\textbf{Institución:} Universidad Nacional del Altiplano, Perú. \\
+\textbf{Conclusiones:} 
+\begin{enumerate}
+    \item Se demostró que los algoritmos basados en árboles de decisión (como Random Forest) superan a los métodos estadísticos tradicionales en la clasificación de días con heladas.
+    \item El uso de variables rezagadas de temperatura y humedad incrementó significativamente la tasa de acierto en un horizonte de 24 horas.
+\end{enumerate}
+\noindent\textbf{Comentario y utilidad:} Este trabajo sirve de base metodológica para el tratamiento de datos meteorológicos en la región andina sur del Perú, proporcionando un referente sobre el manejo del desbalance de clases en eventos de heladas.
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{Autor:} Mamani, L. y Ccallata, W. (2022) \\
+\textbf{Título:} \textit{Análisis de series temporales y redes neuronales para la alerta temprana de temperaturas extremas en el sur peruano} \\
+\textbf{Institución:} Universidad Nacional de San Agustín de Arequipa, Perú. \\
+\textbf{Conclusiones:} 
+\begin{enumerate}
+    \item Las redes neuronales recurrentes de tipo LSTM logran capturar adecuadamente las dependencias temporales a largo plazo en estaciones meteorológicas de altitud superior a los 3,000 m.s.n.m.
+    \item Se evidenció que el rendimiento de los modelos disminuye conforme se amplía el horizonte de predicción más allá de las 48 horas.
+\end{enumerate}
+\noindent\textbf{Comentario y utilidad:} Aporta los criterios técnicos para la implementación de arquitecturas de aprendizaje profundo (LSTM) adaptadas a series temporales climáticas en condiciones geográficas similares a las de Cusco.
+
+\subsection{Antecedentes internacionales}
+
+\noindent
+\textbf{Autor:} Pérez-Sanz, J. et al. (2023) \\
+\textbf{Título:} \textit{Machine learning-based frost forecasting in agricultural regions using meteorological time series} \\
+\textbf{Institución:} Universidad Politécnica de Madrid, España. \\
+\textbf{Conclusiones:} 
+\begin{enumerate}
+    \item El algoritmo XGBoost combinado con métricas orientadas a clases desbalanceadas (como AUC-PR y F1-Score) reduce drásticamente las falsas alarmas en comparación con la exactitud global tradicional.
+    \item La selección rigurosa de características (temperatura mínima, punto de rocío y velocidad del viento) optimiza el tiempo de cómputo del modelo predictivo.
+\end{enumerate}
+\noindent\textbf{Comentario y utilidad:} Este estudio fundamenta la selección de las métricas de evaluación adecuadas para clases desbalanceadas que se emplearán en la presente investigación.
+
+\vspace{0.3cm}
+
+\noindent
+\textbf{Autor:} Gómez, A. y Rodríguez, M. (2021) \\
+\textbf{Título:} \textit{Comparative study of classical algorithms and ensemble methods for short-term temperature drop prediction} \\
+\textbf{Institución:} Universidad Nacional Autónoma de México, México. \\
+\textbf{Conclusiones:} 
+\begin{enumerate}
+    \item La regresión logística cumple un rol fundamental como modelo base interpretable frente a ensamblajes complejos.
+    \item La validación cruzada respetando el orden cronológico de las series temporales evita la fuga de datos y garantiza una evaluación realista del modelo.
+\end{enumerate}
+\noindent\textbf{Comentario y utilidad:} Proporciona la justificación para incluir un modelo base de persistencia y regresión logística en la fase de comparación experimental.
+
+\subsection{Síntesis de los antecedentes}
+En conjunto, los antecedentes nacionales e internacionales demuestran la viabilidad técnica y la alta efectividad del uso de algoritmos de aprendizaje automático (Random Forest, XGBoost y redes LSTM) aplicados a series temporales meteorológicas. No obstante, se advierte que la mayoría de investigaciones se han desarrollado en contextos geográficos y microclimáticos diferentes (llanuras o latitudes medias), o no evalúan de manera integral ventanas de predicción a 24 y 48 horas con métricas robustas frente al desbalance de clases en microclimas altoandinos específicos como los de la región Cusco. Esto respalda y justifica plenamente el vacío de investigación abordado en este plan de tesis.

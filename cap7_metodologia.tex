@@ -1,0 +1,74 @@
+\section{Metodología}
+\label{sec:metodologia}
+
+\subsection{Enfoque}
+El estudio adopta un enfoque cuantitativo, según la clasificación de \textcite{hernandez2023}, pues trabaja con registros numéricos de estaciones meteorológicas y mide el desempeño de los modelos mediante métricas.
+
+\subsection{Alcance}
+El alcance es correlacional \textbf{[confirmar con tu asesor]}: se analiza la relación entre las variables meteorológicas predictoras y la ocurrencia de heladas, y se compara el desempeño de distintos modelos, sin manipular las condiciones en que se registraron los datos.
+
+\subsection{Diseño}
+El diseño es no experimental y longitudinal \textbf{[confirmar con tu asesor]}: se utilizan series históricas de estaciones meteorológicas, observadas a lo largo de varios años, sin intervenir sobre las variables.
+
+\subsection{Hipótesis}
+
+\subsubsection{Hipótesis general}
+Un modelo de aprendizaje automático con series temporales predice la ocurrencia de heladas en la región Cusco con un desempeño significativamente superior al de un modelo base de persistencia.
+
+\subsubsection{Hipótesis específicas}
+\begin{itemize}
+  \item \textbf{H1.} Las variables de temperatura mínima, humedad relativa y su evolución en los días previos son las más relevantes para la predicción de heladas.
+  \item \textbf{H2.} Los modelos de aprendizaje automático superan al modelo base en recall y F1 para la clase \enquote{helada}.
+  \item \textbf{H3.} Al menos un modelo de aprendizaje automático supera a la regresión logística en F1 y AUC-PR.
+  \item \textbf{H4.} El recall del mejor modelo a 48 horas es menor que a 24 horas de anticipación.
+\end{itemize}
+
+\subsubsection{Variables de estudio}
+La variable independiente es el modelo de aprendizaje automático con series temporales (algoritmo y horizonte de anticipación); la variable dependiente es la ocurrencia de helada, medida con recall, precisión, F1, AUC-PR y MCC. La Tabla~\ref{tab:operacionalizacion} muestra su operacionalización.
+
+\begin{table}[ht]
+\centering
+\caption{Operacionalización de variables}
+\label{tab:operacionalizacion}
+\begin{tabular}{@{}p{3cm}p{3.2cm}p{5.2cm}p{3.2cm}@{}}
+\toprule
+\textbf{Variable} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Escala} \\
+\midrule
+Modelo de aprendizaje automático (independiente) & Algoritmo; horizonte de anticipación & Regresión logística, Random Forest, XGBoost, LSTM; 24 h y 48 h & Nominal \\
+Ocurrencia de helada (dependiente) & Desempeño de la predicción & Recall, precisión, F1, AUC-PR, MCC & Razón (0 a 1) \\
+\bottomrule
+\end{tabular}\\
+\textit{Nota.} Elaboración propia.
+\end{table}
+
+\section{Población y muestra}
+La población está conformada por los registros históricos diarios de las estaciones meteorológicas operadas por el Servicio Nacional de Meteorología e Hidrología del Perú (SENAMHI) ubicadas en la región Cusco. 
+
+Para definir la muestra, se aplicaron los siguientes criterios de selección estrictos orientados a garantizar la calidad de los datos para los modelos de aprendizaje automático y series temporales:
+\begin{enumerate}
+    \item \textbf{Ubicación altitudinal:} Estaciones meteorológicas situadas a una altitud igual o superior a los 3,000 metros sobre el nivel del mar (m.s.n.m.), asegurando que se encuentren dentro de las zonas agrícolas altoandinas expuestas a heladas recurrentes.
+    \item \textbf{Disponibilidad y periodicidad temporal:} Un registro histórico continuo de al menos 10 años (comprendido entre los años 2014 y 2024), lo que permite capturar la estacionalidad y variabilidad climática interanual.
+    \item \textbf{Calidad de los datos:} Estaciones que presenten un porcentaje de datos faltantes (valores nulos en temperatura mínima, humedad y velocidad del viento) menor al 20\%, o susceptible de ser tratado mediante técnicas de imputación estadística sin sesgar la serie temporal.
+\end{enumerate}
+Bajo estos criterios, se seleccionará un conjunto representativo de estaciones clave en provincias altoandinas del Cusco (como Chumbivilcas, Canchis, Anta y Calca), cuyos datos históricos serán procesados y divididos cronológicamente para el entrenamiento, validación y prueba de los algoritmos predictivos.
+\subsection{Metodología de desarrollo}
+Se adopta la metodología CRISP-DM, cuyas fases se relacionan con los objetivos específicos en la Tabla~\ref{tab:crispdm}.
+
+\begin{table}[ht]
+\centering
+\caption{Fases de CRISP-DM y su relación con los objetivos}
+\label{tab:crispdm}
+\begin{tabular}{@{}p{3.6cm}p{9.2cm}p{2cm}@{}}
+\toprule
+\textbf{Fase} & \textbf{Actividades} & \textbf{Objetivo} \\
+\midrule
+Comprensión del problema & Definir helada como $T_{\min}\le 0\,^\circ$C y los horizontes de 24 y 48 h. & Todos \\
+Comprensión de los datos & Descargar los registros, describir las variables y medir los datos faltantes y el desbalance de clases. & OE1 \\
+Preparación de los datos & Limpiar e imputar valores faltantes; crear variables rezagadas y de ventana móvil; dividir los datos en orden cronológico (entrenamiento, validación y prueba), sin mezclar al azar para evitar fuga de datos. & OE1, OE2 \\
+Modelado & Entrenar el modelo de persistencia, la regresión logística, Random Forest, XGBoost y LSTM; ajustar hiperparámetros con validación temporal; tratar el desbalance con pesos de clase. & OE3 \\
+Evaluación & Calcular recall, precisión, F1, AUC-PR y MCC a 24 y 48 h; comparar con el modelo base e incluir intervalos de confianza \textbf{[confirmar la prueba estadística]}. & OE4 \\
+Despliegue & Documentar el modelo seleccionado y sus limitaciones como insumo para un sistema de alerta temprana. & OE4 \\
+\bottomrule
+\end{tabular}\\
+\textit{Nota.} Elaboración propia.
+\end{table}

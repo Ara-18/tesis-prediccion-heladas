@@ -1,0 +1,57 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{Resumen}{\es@scroman {i}}{section*.2}%
+\contentsline {section}{Índice de figuras}{\es@scroman {iv}}{section*.3}%
+\contentsline {section}{Índice de tablas}{\es@scroman {v}}{section*.4}%
+\contentsline {section}{Índice de Algoritmos}{\es@scroman {vi}}{section*.6}%
+\contentsline {section}{Índice de Ecuaciones}{\es@scroman {vii}}{section*.8}%
+\contentsline {section}{Índice de Abreviaturas}{\es@scroman {viii}}{section*.9}%
+\contentsline {section}{Índice de Símbolos}{\es@scroman {ix}}{section*.11}%
+\contentsline {section}{Glosario de Términos}{\es@scroman {x}}{section*.13}%
+\contentsline {section}{Índice de Anexos}{\es@scroman {xi}}{section*.16}%
+\contentsline {section}{\numberline {1}Introducción}{1}{section.1}%
+\contentsline {section}{\numberline {2}Planteamiento del problema}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Descripción de la problemática}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Identificación del problema}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Formulación del problema}{3}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Problema general}{3}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Problemas específicos}{4}{subsubsection.2.3.2}%
+\contentsline {section}{\numberline {3}Objetivos}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Objetivo general}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Objetivos específicos}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Correspondencia entre problemas y objetivos}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Justificación}{5}{section.4}%
+\contentsline {section}{\numberline {5}Alcances y limitaciones}{5}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Alcances}{5}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Limitaciones}{5}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Antecedentes de la investigación}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Antecedentes nacionales}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Antecedentes internacionales}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Síntesis de los antecedentes}{6}{subsection.6.3}%
+\contentsline {section}{\numberline {7}Estado del arte}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Métodos para la predicción de heladas}{7}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Aprendizaje automático con series temporales aplicado a heladas}{7}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Comparación de los estudios revisados}{7}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Brecha identificada}{8}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Marco Teórico}{8}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Heladas}{8}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Series temporales}{8}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Algoritmos de aprendizaje automático}{8}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Métricas para clases desbalanceadas}{9}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Metodología}{9}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Enfoque}{9}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Alcance}{9}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Diseño}{9}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Hipótesis}{9}{subsection.9.4}%
+\contentsline {subsubsection}{\numberline {9.4.1}Hipótesis general}{9}{subsubsection.9.4.1}%
+\contentsline {subsubsection}{\numberline {9.4.2}Hipótesis específicas}{10}{subsubsection.9.4.2}%
+\contentsline {subsubsection}{\numberline {9.4.3}Variables de estudio}{10}{subsubsection.9.4.3}%
+\contentsline {section}{\numberline {10}Población y muestra}{10}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Metodología de desarrollo}{11}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Importancia del estudio}{11}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Resultados}{11}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Contribuciones}{12}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Impacto Social}{12}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Cronograma de actividades}{12}{section.12}%
+\contentsline {section}{\numberline {13}Presupuesto}{12}{section.13}%
+\contentsline {section}{Bibliografía}{12}{section*.22}%
+\contentsline {section}{\numberline {A}Nombre del primer anexo}{12}{appendix.A}%

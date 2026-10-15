@@ -1,0 +1,32 @@
+\section{Marco Teórico}
+\label{sec:marco}
+
+\subsection{Heladas}
+[Define helada y sus tipos (radiativas y advectivas), y cómo afectan a los cultivos altoandinos. Cita tus fuentes, por ejemplo SENAMHI.]
+
+\subsection{Series temporales}
+[Define serie temporal, estacionalidad, tendencia y la forma de construir variables rezagadas para predecir a 24 y 48 horas.]
+
+\subsection{Algoritmos de aprendizaje automático}
+[Regresión logística; Random Forest \cite{breiman2001}; XGBoost \cite{chen2016}; LSTM \cite{hochreiter1997}. Explica brevemente cada uno.]
+
+\subsection{Métricas para clases desbalanceadas}
+Dado que la helada es un evento poco frecuente, la exactitud global no es suficiente y se emplean las métricas de la Tabla~\ref{tab:metricas}.
+
+\begin{table}[ht]
+\centering
+\caption{Métricas de evaluación para la clase helada}
+\label{tab:metricas}
+\begin{tabular}{@{}p{3cm}p{11cm}@{}}
+\toprule
+\textbf{Métrica} & \textbf{Qué mide} \\
+\midrule
+Recall & Proporción de heladas reales que el modelo logra detectar. \\
+Precisión & Proporción de alertas emitidas que corresponden a heladas reales. \\
+F1 & Media armónica entre precisión y recall. \\
+AUC-PR & Área bajo la curva precisión--recall; resume el desempeño para distintos umbrales. \\
+MCC & Coeficiente de correlación de Matthews; equilibra los cuatro valores de la matriz de confusión. \\
+\bottomrule
+\end{tabular}\\
+\textit{Nota.} Elaboración propia.
+\end{table}

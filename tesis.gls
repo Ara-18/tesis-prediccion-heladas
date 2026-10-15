@@ -1,0 +1,17 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{D}\relax \glsresetentrylist %
+\glossentry{desbalance}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glslocationcstoencap{glsnumberformat}{es@scroman}{vii}}}\glsgroupskip
+\glsgroupheading{H}\relax \glsresetentrylist %
+\glossentry{helada}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glslocationcstoencap{glsnumberformat}{es@scroman}{vii}}}\glsgroupskip
+\glsgroupheading{M}\relax \glsresetentrylist %
+\glossentry{persistencia}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glslocationcstoencap{glsnumberformat}{es@scroman}{vii}}}\glsgroupskip
+\glsgroupheading{S}\relax \glsresetentrylist %
+\glossentry{seriestemporales}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glslocationcstoencap{glsnumberformat}{es@scroman}{vii}}}%
+\glossentry{sobreajuste}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glslocationcstoencap{glsnumberformat}{es@scroman}{vii}}}%
+\end{theglossary}\glossarypostamble
